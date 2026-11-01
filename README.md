@@ -14,6 +14,8 @@ A compact Godot 4 arcade game made by vaibhav sharma  Steer the glider through f
 
 1. Import this folder in Godot 4.
 2. Press **F5** to play.
+3. or play it deployed on itch.io
+
 
 ## Controls
 
