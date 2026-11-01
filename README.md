@@ -15,10 +15,6 @@ A compact Godot 4 arcade game made by vaibhav sharma  Steer the glider through f
 1. Import this folder in Godot 4.
 2. Press **F5** to play.
 
-## Publishing
-
-Export an HTML5 build from Godot using **Project → Export**. Create a **Web** preset, export it into `builds/web/`, then zip the contents of that folder for itch.io. In itch.io, create a new HTML game, upload that zip, and enable **This file will be played in the browser**.
-
 ## Controls
 
 - **A/D** or **Left/Right Arrow** — steer
