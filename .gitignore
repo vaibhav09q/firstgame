@@ -1,0 +1,13 @@
+# Godot editor and import cache
+.godot/
+
+# Local exports and platform builds
+exports/
+builds/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Godot-generated UID files for deleted/moved scripts
+*.gd.uid

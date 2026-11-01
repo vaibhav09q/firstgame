@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://c4yxviqeh0knf"]
+
+[ext_resource type="Script" uid="uid://ds8ksmxwbgfqq" path="res://scripts/player.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://ddmlb2yqq01r1" path="res://assets/art/bird_flight_sheet.svg" id="2_sheet"]
+
+[sub_resource type="CircleShape2D" id="1_shape"]
+radius = 22.0
+
+[sub_resource type="Animation" id="1_idle"]
+resource_name = "idle"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -7), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="1_library"]
+_data = {
+&"idle": SubResource("1_idle")
+}
+
+[node name="chidiya" type="Area2D" unique_id=2047572272]
+collision_mask = 2
+script = ExtResource("1_script")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1775145271]
+scale = Vector2(0.52, 0.52)
+texture = ExtResource("2_sheet")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1711433895]
+shape = SubResource("1_shape")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2061943286]
+libraries/ = SubResource("1_library")
+autoplay = &"idle"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
